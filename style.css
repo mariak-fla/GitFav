@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --hue: 265;
+
+    --txt: #303030;
+    --main-color: hsl(var(--hue), 100%, 63%);
+    --main-color-transparent: hsla(var(--hue), 100%, 63%, 30%);
+    --main-color-transparent2: hsla(var(--hue), 100%, 63%, 20%);
+    --main-color-dark: hsl(var(--hue), 100%, 30%);
+    --main-color-light: hsl(var(--hue), 100%, 80%);
+
+    --font-mono: "Space Mono", monospace;
+    --font-normal: "Inter", sans-serif;
+}
+
+::selection {
+    background-color: var(--main-color-dark);
+    color: white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(var(--hue), 100%, 63%, 50%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: #111111;
+}
+
+button {
+    border: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app {
+    width: min(90vw, 60rem);
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 10vh 0;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-family: "Space Mono", monospace;
+    color: white;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.search input {
+    height: 3.2rem;
+    border: none;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    color: white;
+    background-color: var(--main-color-transparent);
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    width: min(40vw, 25rem);
+}
+
+.search input:focus {
+    border: 2px solid var(--main-color-light);
+    outline: none;
+}
+
+.search button {
+    height: 3.2rem;
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    padding: 0 1rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search button:hover {
+    filter: brightness(1.25);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    outline: 1px solid var(--main-color-light);
+    border-radius: .45rem;
+    box-shadow: 0 0 2rem var(--main-color-transparent);
+}
+
+table * {
+    font-size: 1.25rem;
+    color: #D1D5DB;
+}
+
+table thead {
+    display: inline-table;
+    width: 100%;
+}
+
+table tbody {
+    overflow-y: scroll;
+    overflow-y: overlay;
+    height: min(40rem, 55vh);
+    display: block;
+    font-family: var(--font-mono);
+}
+
+table th {
+    color: white;
+    background: var(--main-color);
+    font-family: var(--font-normal);
+    text-align: left;
+    padding: 1.5rem;
+}
+
+table th:first-child {
+    border-top-left-radius: .5rem;
+}
+
+table th:last-child {
+    border-top-right-radius: .5rem;
+}
+
+table tr:nth-child(odd) {
+    background: var(--main-color-transparent2);
+}
+
+table tr {
+    background: transparent;
+}
+
+table td {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+tbody td:first-child {
+    width: min(45vw, 30rem);
+}
+
+tbody td {
+    width: min(13.5vw, 9rem);
+}
+
+tbody td:last-child {
+    width: min(4.5vw, 3rem);
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: fit-content;
+}
+
+td.user img {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a p {
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+td .remove {
+    background: none;
+    color: #DC2626;
+    font-weight: bold;
+    cursor: pointer;
+}
